@@ -11,11 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F174F35A-20D2-493E-B196-1CB28D93D424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfileManagement.Domain", "ProfileManagement.Domain\ProfileManagement.Domain.csproj", "{B41BC31B-B060-4284-A27E-33A24ABCDA19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfileManagement.Domain", "ProfileManagement.Domain\ProfileManagement.Domain.csproj", "{B41BC31B-B060-4284-A27E-33A24ABCDA19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5E728D96-4E8A-43E9-984F-7070B7E64856}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfileManagement.Application", "ProfileManagement.Application\ProfileManagement.Application.csproj", "{6B3DA347-66A6-4E2B-AA0F-C89464EDAC4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F2D6B23D-C902-4797-AE27-EE1C9BEF6015}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,7 +43,10 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{29E8DD87-3B49-4553-AB17-88164DD6E6F3} = {FDF70D84-63D9-4B6A-8969-95732762640C}
+		{3C3553EB-3706-4D54-9253-CD0E83707379} = {F2D6B23D-C902-4797-AE27-EE1C9BEF6015}
+		{F174F35A-20D2-493E-B196-1CB28D93D424} = {F2D6B23D-C902-4797-AE27-EE1C9BEF6015}
 		{B41BC31B-B060-4284-A27E-33A24ABCDA19} = {F174F35A-20D2-493E-B196-1CB28D93D424}
+		{5E728D96-4E8A-43E9-984F-7070B7E64856} = {F2D6B23D-C902-4797-AE27-EE1C9BEF6015}
 		{6B3DA347-66A6-4E2B-AA0F-C89464EDAC4E} = {3C3553EB-3706-4D54-9253-CD0E83707379}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
