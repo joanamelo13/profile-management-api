@@ -1,6 +1,5 @@
-﻿namespace ProfileManagement.Domain.Entities;
-
-public class User
+﻿namespace ProfileManagement.Infrastructure.Configuration;
+public class UserConfig
 {
     public string Username { get; set; }
     public string Password { get; set; }

@@ -1,5 +1,4 @@
-﻿
-namespace ProfileManagement.Domain.Entities;
+﻿namespace ProfileManagement.Domain.Entities;
 
 public class ProfileParameter
 {
