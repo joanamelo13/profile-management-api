@@ -68,5 +68,14 @@ namespace ProfileManagement.Application.Exceptions.Resources {
                 return ResourceManager.GetString("EXC0000", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value assigned to the Admin property must not be null..
+        /// </summary>
+        public static string EXC0001 {
+            get {
+                return ResourceManager.GetString("EXC0001", resourceCulture);
+            }
+        }
     }
 }

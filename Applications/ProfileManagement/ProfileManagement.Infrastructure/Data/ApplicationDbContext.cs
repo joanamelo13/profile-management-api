@@ -20,6 +20,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ProfileParameter>().HasKey(p => p.ProfileName);
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<User>().HasData(

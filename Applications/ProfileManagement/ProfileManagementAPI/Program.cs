@@ -1,16 +1,23 @@
 using Microsoft.EntityFrameworkCore;
 using ProfileManagement.Infrastructure.Data;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using ProfileManagement.API.Routing;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Conventions.Add(new RouteTokenTransformerConvention(new LowerCaseParameterTransformer()));
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>options.UseInMemoryDatabase("ProfileManagementDb"));
+
 
 var app = builder.Build();
 

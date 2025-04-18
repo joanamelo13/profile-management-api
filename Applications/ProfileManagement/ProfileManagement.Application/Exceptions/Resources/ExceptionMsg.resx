@@ -120,4 +120,7 @@
   <data name="EXC0000" xml:space="preserve">
     <value>DefaultUsers configuration is missing.</value>
   </data>
+  <data name="EXC0001" xml:space="preserve">
+    <value>The value assigned to the Admin property must not be null.</value>
+  </data>
 </root>
