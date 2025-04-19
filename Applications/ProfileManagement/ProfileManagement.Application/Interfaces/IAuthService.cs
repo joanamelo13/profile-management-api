@@ -1,6 +1,8 @@
-﻿namespace ProfileManagement.Application.Interfaces;
+﻿using System.Security.Claims;
+
+namespace ProfileManagement.Application.Interfaces;
 
 public interface IAuthService
 {
-    Task<string?> AuthenticateAsync(string username, string password);
+    public string GenerateJwtToken(string username, IEnumerable<Claim> additionalClaims = null);
 }

@@ -4,7 +4,6 @@ using ProfileManagement.Application.Exceptions.Resources;
 using ProfileManagement.Domain.Entities;
 using ProfileManagement.Infrastructure.Configuration;
 
-
 namespace ProfileManagement.Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext
@@ -21,21 +20,30 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ProfileParameter>().HasKey(p => p.ProfileName);
-        base.OnModelCreating(modelBuilder);
-
+        
+        modelBuilder.Entity<ProfileParameter>()
+        .Property(p => p.Parameters)
+        .HasConversion(
+            v => System.Text.Json.JsonSerializer.Serialize(v, new System.Text.Json.JsonSerializerOptions()),
+            v => System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(v, new System.Text.Json.JsonSerializerOptions())
+        ); 
         modelBuilder.Entity<User>().HasData(
             new ()
             {
+                Id = 1,
                 Username = _defaultUsersConfig.Admin.Username,
                 Password = _defaultUsersConfig.Admin.Password,
                 Role = _defaultUsersConfig.Admin.Role
             },
             new ()
             {
+                Id = 2,
                 Username = _defaultUsersConfig.User.Username,
                 Password = _defaultUsersConfig.User.Password,
                 Role = _defaultUsersConfig.User.Role
             }
         );
+        
+        base.OnModelCreating(modelBuilder);
     }
 }

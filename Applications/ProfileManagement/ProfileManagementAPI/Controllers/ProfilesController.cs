@@ -18,6 +18,7 @@ public class ProfilesController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAllProfiles()
     {
         var profiles = await _profileService.GetAllProfilesAsync();
@@ -25,6 +26,7 @@ public class ProfilesController : ControllerBase
     }
 
     [HttpGet("{profileName}")]
+    [Authorize]
     public async Task<IActionResult> GetProfile(string profileName)
     {
         var profile = await _profileService.GetProfileAsync(profileName);
@@ -33,6 +35,7 @@ public class ProfilesController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> AddProfile(ProfileParameter profile)
     {
         await _profileService.AddProfileAsync(profile);
@@ -40,6 +43,7 @@ public class ProfilesController : ControllerBase
     }
 
     [HttpPut("{profileName}")]
+    [Authorize]
     public async Task<IActionResult> UpdateProfile(string profileName, Dictionary<string, string> parameters)
     {
         await _profileService.UpdateProfileAsync(profileName, parameters);
@@ -47,6 +51,7 @@ public class ProfilesController : ControllerBase
     }
 
     [HttpDelete("{profileName}")]
+    [Authorize]
     public async Task<IActionResult> DeleteProfile(string profileName)
     {
         await _profileService.DeleteProfileAsync(profileName);
@@ -54,6 +59,7 @@ public class ProfilesController : ControllerBase
     }
 
     [HttpGet("{profileName}/validate")]
+    [Authorize]
     public async Task<IActionResult> ValidateProfile(string profileName, [FromQuery] string action)
     {
         var isValid = await _profileService.ValidateProfileAsync(profileName, action);

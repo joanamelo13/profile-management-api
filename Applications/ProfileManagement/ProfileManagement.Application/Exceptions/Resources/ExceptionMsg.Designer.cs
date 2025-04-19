@@ -51,7 +51,7 @@ namespace ProfileManagement.Application.Exceptions.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -70,11 +70,20 @@ namespace ProfileManagement.Application.Exceptions.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value assigned to the Admin property must not be null..
+        ///   Looks up a localized string similar to The value assigned to the property must not be null..
         /// </summary>
         public static string EXC0001 {
             get {
                 return ResourceManager.GetString("EXC0001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JwtSettings configuration is missing..
+        /// </summary>
+        public static string EXC0002 {
+            get {
+                return ResourceManager.GetString("EXC0002", resourceCulture);
             }
         }
     }

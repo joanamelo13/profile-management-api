@@ -121,6 +121,9 @@
     <value>DefaultUsers configuration is missing.</value>
   </data>
   <data name="EXC0001" xml:space="preserve">
-    <value>The value assigned to the Admin property must not be null.</value>
+    <value>The value assigned to the property must not be null.</value>
+  </data>
+  <data name="EXC0002" xml:space="preserve">
+    <value>JwtSettings configuration is missing.</value>
   </data>
 </root>

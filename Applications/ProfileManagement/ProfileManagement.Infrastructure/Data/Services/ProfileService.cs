@@ -3,7 +3,7 @@ using ProfileManagement.Application.Interfaces;
 using ProfileManagement.Domain.Entities;
 using ProfileManagement.Infrastructure.Data;
 
-namespace ProfileManagement.Infrastructure.Services;
+namespace ProfileManagement.Infrastructure.Data.Services;
 
 public class ProfileService : IProfileService
 {
@@ -33,7 +33,7 @@ public class ProfileService : IProfileService
     public async Task UpdateProfileAsync(string profileName, Dictionary<string, string> parameters)
     {
         var profile = await _dbContext.Profiles.FirstOrDefaultAsync(p => p.ProfileName == profileName);
-        if (profile != null)
+        if (profile is not null)
         {
             profile.Parameters = parameters;
             await _dbContext.SaveChangesAsync();
@@ -43,7 +43,7 @@ public class ProfileService : IProfileService
     public async Task DeleteProfileAsync(string profileName)
     {
         var profile = await _dbContext.Profiles.FirstOrDefaultAsync(p => p.ProfileName == profileName);
-        if (profile != null)
+        if (profile is not null)
         {
             _dbContext.Profiles.Remove(profile);
             await _dbContext.SaveChangesAsync();
@@ -53,6 +53,6 @@ public class ProfileService : IProfileService
     public async Task<bool> ValidateProfileAsync(string profileName, string action)
     {
         var profile = await _dbContext.Profiles.FindAsync(profileName);
-        return profile != null && profile.Parameters.TryGetValue(action, out var value) && value == "true";
+        return profile is not null && profile.Parameters.TryGetValue(action, out var value) && value == "true";
     }
 }
